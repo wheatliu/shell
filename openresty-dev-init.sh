@@ -4,7 +4,7 @@ set -x
 set -e
 
 if [[ $# -lt 1 ]]; then
-    echo 'usgae: install.sh 1.2.1'
+    echo 'usage: install.sh 1.2.1'
     exit 1
 fi
 
@@ -13,7 +13,7 @@ WORKSPACE=/tmp
 CPUS=`lscpu | awk -F'[: ]+' '/^CPU\(s\):/{print $2}'`
 
 # Depends
-sudo apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev libreadline-dev perl make build-essential curl -y
+sudo apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev libreadline-dev libgd-dev perl make build-essential curl -y
 
 # openresty
 wget https://openresty.org/download/openresty-$OPENRESTY_VERSION.tar.gz -P $WORKSPACE
